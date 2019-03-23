@@ -1,0 +1,39 @@
+{
+  "name": "paystack-fees",
+  "version": "1.0.1",
+  "description": "Add paystack fees to an amount",
+  "main": "PaystackFees.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimlawal/paystack-fees-js.git"
+  },
+  "keywords": [
+    "paystack",
+    "fees",
+    "js"
+  ],
+  "author": "Ibrahim Lawal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibrahimlawal/paystack-fees-js/issues"
+  },
+  "homepage": "https://github.com/ibrahimlawal/paystack-fees-js#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "jest": "^24.5.0"
+  },
+  "peerDependencies": {
+    "joi": "*"
+  },
+  "dependencies": {
+    "joi": "^14.3.1"
+  }
+}

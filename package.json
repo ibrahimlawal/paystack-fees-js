@@ -1,6 +1,6 @@
 {
   "name": "paystack-fees",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add paystack fees to an amount",
   "main": "PaystackFees.js",
   "scripts": {
@@ -32,8 +32,5 @@
   },
   "peerDependencies": {
     "joi": "*"
-  },
-  "dependencies": {
-    "joi": "^14.3.1"
   }
 }

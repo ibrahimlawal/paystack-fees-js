@@ -1,10 +1,10 @@
 try {
-    require('joi'); // eslint-disable-line global-require
+    require('@hapi/joi'); // eslint-disable-line global-require
 } catch (error) {
-    process.emitWarning('Please install peer dependency - joi - so that validations can run.');
+    process.emitWarning('Please install peer dependency - @hapi/joi - so that validations can run.');
     throw error;
 }
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 /**
  * A class for managing Paystack fees in your application.
@@ -12,10 +12,10 @@ const Joi = require('joi');
  * Installation
  * ============
  * **Peer Dependency (required)**
- * 
+ *
  * Install Joi which we have employed for validating parameters sent to functions in this library
  * ```
- * npm install --save joi
+ * npm install --save @hapi/joi
  * ```
  * Now install the module
  *```
@@ -90,7 +90,7 @@ class PaystackFees {
     /**
      * @description set the additional charge which will be added if the amount is over threshold
      * @throws if additional charge sent is invalid
-     * @param {number} percentage - positive number less than 1
+     * @param {number} additionalCharge - 0 or more
      * @returns the current PaystackFees object
      */
     withAdditionalCharge(additionalCharge) {
@@ -112,7 +112,7 @@ class PaystackFees {
      * @description set the threshold, beyond which additional charge
      * will be added to fees.
      * @throws if threshold sent is invalid
-     * @param {number} percentage - positive number less than 1
+     * @param {number} threshold - 0 or more
      * @returns the current PaystackFees object
      */
     withThreshold(threshold) {
@@ -133,7 +133,7 @@ class PaystackFees {
     /**
      * @description set the cap
      * @throws if cap sent is invalid
-     * @param {number} percentage - positive number less than 1
+     * @param {number} cap - positive number greater than or equal to 1
      * @returns the current PaystackFees object
      */
     withCap(cap) {
@@ -155,7 +155,7 @@ class PaystackFees {
      * @throws if amountInLowerDenomination sent is invalid
      * @param {number} amountInLowerDenomination - The amount we want to be settled after
      * paystack deducts fees
-     * @returns amount se should send in lower denomination
+     * @returns amount you should send in lower denomination
      * @example paystackFee.addTo(10000) // add fees so we can be settled 100 in higher denomination
      */
     addTo(amountInLowerDenomination) {

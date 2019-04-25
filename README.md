@@ -9,7 +9,7 @@ Installation
 
 Install Joi which we have employed for validating parameters sent to functions in this library
 ```
-npm install --save joi
+npm install --save @hapi/joi
 ```
 Now install the module
 ```
@@ -40,9 +40,9 @@ const amountToSendToBeSettled50USD = paystackFees.addTo(5000);
 
 * [PaystackFees](#PaystackFees)
     * [.withPercentage(percentage)](#PaystackFees+withPercentage) ⇒
-    * [.withAdditionalCharge(percentage)](#PaystackFees+withAdditionalCharge) ⇒
-    * [.withThreshold(percentage)](#PaystackFees+withThreshold) ⇒
-    * [.withCap(percentage)](#PaystackFees+withCap) ⇒
+    * [.withAdditionalCharge(additionalCharge)](#PaystackFees+withAdditionalCharge) ⇒
+    * [.withThreshold(threshold)](#PaystackFees+withThreshold) ⇒
+    * [.withCap(cap)](#PaystackFees+withCap) ⇒
     * [.addTo(amountInLowerDenomination)](#PaystackFees+addTo) ⇒
     * [.calculateFor(amountInLowerDenomination)](#PaystackFees+calculateFor) ⇒
 
@@ -64,7 +64,7 @@ set the percentage
 
 <a name="PaystackFees+withAdditionalCharge"></a>
 
-### paystackFees.withAdditionalCharge(percentage) ⇒
+### paystackFees.withAdditionalCharge(additionalCharge) ⇒
 set the additional charge which will be added if the amount is over threshold
 
 **Kind**: instance method of [<code>PaystackFees</code>](#PaystackFees)  
@@ -76,11 +76,11 @@ set the additional charge which will be added if the amount is over threshold
 
 | Param | Type | Description |
 | --- | --- | --- |
-| percentage | <code>number</code> | positive number less than 1 |
+| additionalCharge | <code>number</code> | 0 or more |
 
 <a name="PaystackFees+withThreshold"></a>
 
-### paystackFees.withThreshold(percentage) ⇒
+### paystackFees.withThreshold(threshold) ⇒
 set the threshold, beyond which additional charge
 will be added to fees.
 
@@ -93,11 +93,11 @@ will be added to fees.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| percentage | <code>number</code> | positive number less than 1 |
+| threshold | <code>number</code> | 0 or more |
 
 <a name="PaystackFees+withCap"></a>
 
-### paystackFees.withCap(percentage) ⇒
+### paystackFees.withCap(cap) ⇒
 set the cap
 
 **Kind**: instance method of [<code>PaystackFees</code>](#PaystackFees)  
@@ -109,7 +109,7 @@ set the cap
 
 | Param | Type | Description |
 | --- | --- | --- |
-| percentage | <code>number</code> | positive number less than 1 |
+| cap | <code>number</code> | positive number greater than or equal to 1 |
 
 <a name="PaystackFees+addTo"></a>
 
@@ -117,7 +117,7 @@ set the cap
 calculate amount to be sent to paystack to be settled the amount provided
 
 **Kind**: instance method of [<code>PaystackFees</code>](#PaystackFees)  
-**Returns**: amount se should send in lower denomination  
+**Returns**: amount you should send in lower denomination  
 **Throws**:
 
 - if amountInLowerDenomination sent is invalid

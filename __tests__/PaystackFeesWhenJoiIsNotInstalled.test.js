@@ -1,4 +1,4 @@
-jest.mock('joi');
+jest.mock('@hapi/joi');
 
 describe('PaystackFees', () => {
     test('should not load if jest could not be loaded', () => {

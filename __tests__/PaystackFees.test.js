@@ -1,4 +1,4 @@
-jest.dontMock('joi');
+jest.dontMock('@hapi/joi');
 const PaystackFees = require('../PaystackFees');
 
 describe('PaystackFees', () => {

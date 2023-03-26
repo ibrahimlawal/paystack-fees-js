@@ -208,7 +208,7 @@ class PaystackFees {
                     .required(),
             }),
         );
-        const flat = amountInLowerDenomination > this.threshold ? this.additionalCharge : 0;
+        const flat = amountInLowerDenomination >= this.threshold ? this.additionalCharge : 0;
         const fees = Math.ceil(this.percentage * amountInLowerDenomination + flat);
         return Math.min(fees, this.cap);
     }
